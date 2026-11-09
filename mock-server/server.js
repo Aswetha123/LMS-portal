@@ -615,7 +615,7 @@ app.get('/api/v1/user/my-events', auth, (req, res) => {
   res.json({ success: true, data: myEvents });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`LMS Local Mock Server running on http://localhost:${PORT}`);
   console.log(`Seeded accounts:`);
   console.log(`- Admin: admin@lms.com / adminpassword123`);
