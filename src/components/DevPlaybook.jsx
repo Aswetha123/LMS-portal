@@ -4,7 +4,7 @@ import API from '../api';
 export default function DevPlaybook({ user, showNotification, setLoading, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('user-flow');
-  const [apiEnv, setApiEnv] = useState('live');
+  const [apiEnv, setApiEnv] = useState('local');
   
   // Admin Create User inputs
   const [createName, setCreateName] = useState('Test Student');
@@ -16,7 +16,7 @@ export default function DevPlaybook({ user, showNotification, setLoading, onLogo
   const [verifyOutput, setVerifyOutput] = useState('');
 
   useEffect(() => {
-    const savedEnv = localStorage.getItem('lms_api_env') || 'live';
+    const savedEnv = localStorage.getItem('lms_api_env') || 'local';
     setApiEnv(savedEnv);
   }, []);
 

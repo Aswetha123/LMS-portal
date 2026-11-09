@@ -4,11 +4,11 @@ import API from '../api';
 export default function LoginView({ onLoginSuccess, onNavigate, showNotification, setLoading }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [apiEnv, setApiEnv] = useState('live');
+  const [apiEnv, setApiEnv] = useState('local');
   const [loginError, setLoginError] = useState('');
 
   useEffect(() => {
-    const savedEnv = localStorage.getItem('lms_api_env') || 'live';
+    const savedEnv = localStorage.getItem('lms_api_env') || 'local';
     setApiEnv(savedEnv);
   }, []);
 
